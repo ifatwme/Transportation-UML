@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NotFoundComponent } from './not-found.component';
+import { SharedModule } from 'src/app/share/shared/shared.module';
 
 
 
@@ -9,7 +10,8 @@ import { NotFoundComponent } from './not-found.component';
     NotFoundComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ],
   exports: [
     NotFoundComponent

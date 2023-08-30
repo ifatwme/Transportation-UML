@@ -1,1 +1,54 @@
-<p>user works!</p>
+<mat-tab-group color="accent">
+    <mat-tab label="Reservation">
+        <div class="container mt-4 col-7">
+            <ng-container *ngIf="!loading && !reservationTab">
+                <form class="row" [formGroup]="form">
+                    <h1 class="text-center">Reservation form</h1>
+                    <mat-form-field color="accent" class="col-12 pt-4">
+                      <mat-label>Write your full name</mat-label>
+                      <input formControlName="name" matInput placeholder="Name">
+                    </mat-form-field>
+                  
+                    <mat-form-field color="accent" class="col-12">
+                        <mat-label>Write your phone number</mat-label>
+                        <input formControlName="phone" type="tel" matInput placeholder="phone number">
+                    </mat-form-field>
+    
+                    <mat-form-field color="accent" class="col-12">
+                      <mat-label>Write your address</mat-label>
+                      <textarea formControlName="address" matInput placeholder="Address"></textarea>
+                    </mat-form-field>
+    
+                    <mat-form-field color="accent" class="col-12">
+                        <mat-label>Write destination</mat-label>
+                        <textarea formControlName="destination" matInput placeholder="Destination"></textarea>
+                    </mat-form-field>
+                </form>
+                <div class="row d-flex justify-content-end pb-3 mx-3">
+                    <button (click)="reserve()" class="col-4" mat-flat-button color="accent" [disabled]="!form.valid">Reserve</button>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="!loading && reservationTab">
+                <app-reservation (onClose)="showForm()" [id]="reservationId"></app-reservation>
+            </ng-container>
+            <ng-container *ngIf="loading">
+                <div class="w-100 d-flex justify-content-center align-items-center" style="height:500px;">
+                    <mat-spinner color="accent" style="width: 150px; height: 150px;"></mat-spinner>
+                </div>
+            </ng-container>
+        </div>
+    </mat-tab>
+    <mat-tab label="History">
+        <div class="container mt-4 col-6">
+            <ng-container *ngIf="selectedReservation">
+                <app-reservation (onClose)="showList()" [id]="selectedReservation"></app-reservation>
+            </ng-container>
+            <ng-container *ngIf="!selectedReservation">
+                <div (click)="selectedReservation = item.id" class="reservation-item m-3 p-3" matRipple *ngFor="let item of allReservations">
+                    <p>{{item.name}}</p>
+                    <p class="mx-3">{{item.destination}}</p>
+                </div>
+            </ng-container>
+        </div>
+    </mat-tab>
+</mat-tab-group>

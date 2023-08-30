@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DriverComponent } from './driver.component';
-import { MaterialModule } from 'src/app/share/material/material.module';
+import { SharedModule } from 'src/app/share/shared/shared.module';
 
 
 
@@ -11,7 +11,7 @@ import { MaterialModule } from 'src/app/share/material/material.module';
   ],
   imports: [
     CommonModule,
-    MaterialModule,
+    SharedModule
   ],
   exports: [
     DriverComponent

@@ -6,7 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DriverModule } from './layers/driver/driver.module';
 import { UserModule } from './layers/user/user.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './share/material/material.module';
+import { AdminModule } from './layers/admin/admin.module';
+
+
 
 @NgModule({
   declarations: [
@@ -16,9 +19,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     UserModule,
+    AdminModule,
     DriverModule,
-    BrowserAnimationsModule,
-    HttpClientModule
+    MaterialModule,
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
