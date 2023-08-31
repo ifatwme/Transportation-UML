@@ -1,5 +1,5 @@
 ## Introduction
-This is one those time-consuming universitie's projects which was painfully complicated for us, But I've had good time with my teamates and friends, [Mahdi](https://github.com/mahdiGhorbaniMQ) and [Negin]()! :)
+This is one those time-consuming universitie's projects which was painfully complicated for us, But I've had good time with my teamates and friends, [Mahdi](https://github.com/mahdiGhorbaniMQ) and [Negin](https://github.com/negtech)! :)
 
 ## UML Diagrams
 ```
